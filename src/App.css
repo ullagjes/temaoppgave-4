@@ -1,0 +1,177 @@
+/*
+** .App = Overordnet kropp, inneholder alle komponenter.
+** .inputStyle = Inneholder form, input, label, div og h1. listStyle ligger her.
+** .listStyle = inneholder div med .task-card
+** .task-card = inneholder label, input checkbox og submit
+*/
+
+
+h2 {
+    font-size: 4rem;
+    font-family: 'Elsie Swash Caps', cursive;
+    margin-bottom: .5em;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+}
+
+.counterStyle {
+    margin-left: 1em;
+    width: 45%;
+    font-size: 1.5rem;
+    border-bottom: 1px solid black;
+}
+
+.counterStyle span {
+    font-weight: 800;
+}
+
+.createListBtn{
+    font-size: 1.5rem;
+    width: 4em;
+    height: 2.5em;
+    color: teal;
+}
+
+.createListForm{
+    width: 100%;
+    min-height: 400px;
+    background-color: grey;
+    display: flex;
+    flex-flow: column;
+}
+.createListForm input, label {
+    
+    font-size: 2.5rem;
+}
+
+
+
+
+
+.showInputFormBtn {
+    display: none;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+    z-index: 2;
+    position: fixed;
+    margin: .3em 0 0 .5em;
+    font-size: 2rem;
+    border: none;
+}
+
+.formStyleHidden {
+    display: none;
+}
+
+.formStyleVisible {
+    width: 100%;
+    padding: .5em;
+    display: flex;
+    flex-flow: column;
+    transition: .5s ease;
+    text-align: center;
+}
+
+@keyframes display {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+.listStyle, .task-card, .formStyleVisible {
+    font-family: 'Cherry Swash', cursive;
+    padding: .5em;
+    margin: 1em auto;
+    background-color: rgba(231, 231, 231, 0.8);
+    
+}
+
+.listStyle {
+    min-height: 400px;
+    text-align: center;
+    margin: 1em;
+}
+
+.inputStyle label {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: .2em;
+    text-align: center;
+}
+
+.inputStyle input{
+    font-family: 'Cherry Swash', cursive;
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(85, 85, 85);
+    border-radius: 10px;
+    width: 60%;
+    padding: .4em;
+    margin: .2em auto;
+}
+
+.inputStyle input[type=submit] {
+    color: red;
+}
+
+
+.task-card{
+    width: 90%;
+    margin: 1em auto;
+    padding: 1em;
+    font-size: 1.7rem;
+    text-align: left;
+}
+
+.task-card h3 {
+    line-height: 150%;
+}
+@media (max-width: 576px) {
+    .container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    header{
+        width: 100%;
+        position: absolute;
+    }
+
+    .listStyle {
+        position: relative;
+        width: 95vw;
+        left: 1vw;
+        top: 15vh;
+    }
+
+    .formStyleVisible {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        top: -70vh;
+        padding: 5em 1em;
+        background-color:  rgb(231, 231, 231);
+    }
+
+    .inputStyle label {
+        font-size: 2rem;
+    }
+
+    .inputStyle input{
+        font-size: 2rem;
+        width: 45%;
+        border: none;
+    }
+}
+
